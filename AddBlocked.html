@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embedded Video Example with Ad-Blocking Detection</title>
+</head>
+<body>
+  <h1>Embedded Video</h1>
+
+  <!-- Replace {tt2258904} with the actual video ID -->
+  <iframe src="https://vidsrc.to/embed/tv/tt2258904" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+
+  <!-- Add a download link -->
+  <p>
+    <a href="https://example.com/path/to/video/tt2258904.mp4" download>Download Video</a>
+  </p>
+
+  <!-- Your JavaScript code for ad-blocking detection -->
+  <script>
+    // Function to check if ad-blocking is enabled
+    function isAdBlocked() {
+      const iframe = document.querySelector('iframe');
+      return iframe.style.display === 'none';
+    }
+
+    // Check if ad-blocking is enabled and handle the result
+    if (isAdBlocked()) {
+      console.log('Ad-blocking is enabled.');
+      // You can take actions like hiding ads or showing alternative content for users who have ad-blockers enabled.
+    } else {
+      console.log('Ad-blocking is not enabled.');
+      // Display the ad or take any other actions appropriate for users who don't have ad-blockers enabled.
+    }
+  </script>
+</body>
+</html>
 
