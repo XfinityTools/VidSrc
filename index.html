@@ -26,7 +26,7 @@
         </div> -->
 
         <br><br><br><i class="fas fa-play"></i>
-        <button class="button" onclick="D2()"> Loki (2021) </button>
+        <button id="B2" class="button" onclick="D2()"> Loki (2021) </button>
         
 
         <div style="display: none;" id="D2" class="watch" style="margin: auto;">
@@ -59,12 +59,57 @@
             <h1>The Godfather (1972)</h1>
             <iframe src="https://vidsrc.to/embed/movie/tt0068646" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
     </div>
+
     <br><br><br><i class="fas fa-play"></i>
     <button onclick="D7()">Game of Thrones (2011) </button>
     <div style="display: none;" id="D7" class="watch" style="margin: auto;">
             <h1>Game of Thrones (2011)</h1>
             <iframe src="https://vidsrc.to/embed/tv/tt0944947" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
     </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button onclick="D8()">SpongeBob SquarePants (1999) </button>
+    <div style="display: none;" id="D8" class="watch" style="margin: auto;">
+            <h1>SpongeBob SquarePants (1999)</h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt0206512" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button onclick="D9()">Avatar: The Way of Water (2022) </button>
+    <div style="display: none;" id="D9" class="watch" style="margin: auto;">
+            <h1>Avatar: The Way of Water (2022)</h1>
+            <iframe src="https://vidsrc.to/embed/movie/tt1630029" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button onclick="D10()">Scandal (2012) </button>
+    <div style="display: none;" id="D10" class="watch" style="margin: auto;">
+            <h1>Scandal (2012)</h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt1837576" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button onclick="D11()">Sex and the City (1998) </button>
+    <div style="display: none;" id="D11" class="watch" style="margin: auto;">
+            <h1>Sex and the City (1998)</h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt0159206" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button onclick="D12()">The Vampire Diaries (2009) </button>
+    <div style="display: none;" id="D12" class="watch" style="margin: auto;">
+            <h1>The Vampire Diaries (2009)</h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt1405406" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button onclick="D13()">The Originals (2013) </button>
+    <div style="display: none;" id="D13" class="watch" style="margin: auto;">
+            <h1>The Originals (2013)</h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt2632424" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    
+
       
 
 
@@ -90,6 +135,12 @@
 </body>
 
 <script>
+// Call the function when the toggle button is clicked
+const toggleButton = document.getElementsByID('B2');
+    toggleButton.addEventListener('click', autoplayAndFullscreen);
+
+
+
     // Function to check if ad-blocking is enabled
     function isAdBlocked() {
       const iframe = document.querySelector('iframe');
@@ -168,7 +219,48 @@ function D7() {
   }
 }
 function D8() {
-  var x = document.getElementById("D7");
+  var x = document.getElementById("D8");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function D9() {
+  var x = document.getElementById("D9");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function D10() {
+  var x = document.getElementById("D10");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function D11() {
+  var x = document.getElementById("D11");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function D12() {
+  var x = document.getElementById("D12");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+function D13() {
+  var x = document.getElementById("D13");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
