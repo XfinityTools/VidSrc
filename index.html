@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   watchDivs.forEach(function(div, index) {
     var divNumber = document.createElement("span");
-    divNumber.textContent = "- [" + (index + 1) + "]";
+    divNumber.textContent = " [" + (index + 1) + "]";
     div.querySelector("h1").appendChild(divNumber);
   });
 });
