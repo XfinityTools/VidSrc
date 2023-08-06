@@ -4,6 +4,7 @@
 <html>
 <head>
   <style>
+    
     .hideable {
       display: none; /* Initially hide the divs */
     }
@@ -148,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <iframe src="https://vidsrc.to/embed/tv/tt8518136" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
     </div>
 
-    <br><br><br>
+    <div class="five-line-breaks"></div>
     
 
       
@@ -252,6 +253,12 @@ button{
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s; /* Smooth transition on hover */
     cursor: pointer;
+}
+
+  .five-line-breaks {
+  display: block;
+  height: 5em; /* Adjust the height as needed for your desired spacing */
+  content: "";
 }
  </style>
 </html>
