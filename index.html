@@ -3,7 +3,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <script src="VidScript.js"></script>
+
+// Function to prevent the default behavior of the ad links
+function blockAdLinks(event) {
+  event.preventDefault();
+}
+
+// Attach the event listener to block the ad links
+for (const adLink of adLinks) {
+  adLink.addEventListener('click', blockAdLinks);
+}
+
+
+// Function to prevent the default behavior of the ad links
+function blockAdLinks(event) {
+  event.preventDefault();
+}
+
+// Attach the event listener to block the ad links
+for (const adLink of adLinks) {
+  adLink.addEventListener('click', blockAdLinks);
+}
+
   <style>
     
 iframe{
