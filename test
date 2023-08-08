@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <select id="imdbDropdown">
+    <option value="tt2258904">A Place to Call Home</option>
+    <!-- Add more options for other TV shows -->
+</select>
+<button class="control-btn" id="autonextButton">Autonext</button>
+<div id="episodeContainer">
+    <h1 id="episodeTitle"></h1>
+    <div id="episodeIframe"></div>
+</div>
+<script>
+    const autonextButton = document.getElementById('autonextButton');
+    const episodeTitle = document.getElementById('episodeTitle');
+    const episodeIframe = document.getElementById('episodeIframe');
+    const imdbDropdown = document.getElementById('imdbDropdown');
+    const episodeContainer = document.getElementById('episodeContainer');
+
+    const episodes = {
+        tt2258904: [
+            { season: '1', episode: '1' },
+            { season: '1', episode: '2' },
+            // Add more episodes for this IMDb ID
+        },
+        // Add more IMDb IDs with their respective episodes
+    };
+
+    let currentEpisode = 0;
+    let selectedImdbId = imdbDropdown.value;
+
+    function fetchEpisodeData(imdbId, episodeData) {
+        const episodeUrl = `https://vidsrc.to/embed/tv/${imdbId}/${episodeData.season}/${episodeData.episode}`;
+        fetch(episodeUrl)
+            .then(response => response.json())
+            .then(data => {
+                episodeTitle.textContent = data.title; // Update with the actual property name from the API response
+                episodeIframe.innerHTML = `<iframe src="${data.videoUrl}" width="100%" height="400" frameborder="5" allowfullscreen></iframe>`;
+            })
+            .catch(error => console.error('Error fetching episode data:', error));
+    }
+
+    function showNextEpisode() {
+        const currentEpisodes = episodes[selectedImdbId];
+        if (!currentEpisodes) {
+            return;
+        }
+
+        currentEpisode = (currentEpisode + 1) % currentEpisodes.length;
+        fetchEpisodeData(selectedImdbId, currentEpisodes[currentEpisode]);
+    }
+
+    autonextButton.addEventListener('click', showNextEpisode);
+
+    imdbDropdown.addEventListener('change', function() {
+        selectedImdbId = imdbDropdown.value;
+        currentEpisode = 0;
+        const currentEpisodes = episodes[selectedImdbId];
+        if (currentEpisodes) {
+            fetchEpisodeData(selectedImdbId, currentEpisodes[currentEpisode]);
+        }
+    });
+
+    // Load the first episode when the page loads
+    const currentEpisodes = episodes[selectedImdbId];
+    if (currentEpisodes) {
+        fetchEpisodeData(selectedImdbId, currentEpisodes[currentEpisode]);
+    }
+
+    // Function to toggle visibility of the episode container
+    function toggleElement(divId) {
+        const div = document.getElementById(divId);
+        episodeContainer.style.display = 'block';
+        fetchEpisodeData(selectedImdbId, episodes[divId]);
+    }
+</script>
+
+
+    
+</body>
+</html>
