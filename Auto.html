@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <script src="VidScript.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="VidScript.js"></script>
     <title>Autonext Example</title>
+    <style>
+        /* Add styling for the fullscreen container */
+        .fullscreen-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+    </style>
     <script>
         // Define a function to generate episode source URLs based on a pattern
         function generateEpisodeSources(imdbId, episodeCounts) {
@@ -50,11 +65,35 @@
             }
         }
 
-        // Function to automatically start playing the videos
+        function toggleFullscreen(iframeId) {
+            const iframe = document.getElementById(iframeId);
+            const fullscreenContainer = document.createElement('div');
+            fullscreenContainer.className = 'fullscreen-container';
+            
+            if (!document.fullscreenElement) {
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                fullscreenContainer.appendChild(iframe);
+                document.body.appendChild(fullscreenContainer);
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error('Error attempting to enable fullscreen:', err);
+                });
+            } else {
+                document.exitFullscreen();
+                fullscreenContainer.removeChild(iframe);
+                document.body.removeChild(fullscreenContainer);
+            }
+        }
+
         function autoPlayVideos() {
             episodes.forEach(episode => {
                 const iframe = document.getElementById(`${episode.id}-iframe`);
                 iframe.src = episode.sources[0]; // Play the first episode of each show
+
+                // Add onended event to play the next episode
+                iframe.addEventListener('ended', () => {
+                    showNextEpisode(episode.id, 'next');
+                });
             });
         }
 
@@ -66,13 +105,14 @@
     <!-- Loop through each episode and create a button and div for it -->
     <script>
         episodes.forEach(episode => {
-            document.write(`<br><br>
+            document.write(`
                 <i class="fas fa-play"></i>
                 <button class="control-btn" onclick="toggleElement('${episode.id}')">${episode.title}</button>
                 <div id="${episode.id}" class="watch" style="display: none;">
                     <h1>${episode.title}</h1>
                     <iframe id="${episode.id}-iframe" width="100%" height="400" frameborder="5" allowfullscreen></iframe>
                     <button class="control-btn" onclick="showNextEpisode('${episode.id}', 'previous')">Previous</button>
+                    <button class="control-btn" onclick="toggleFullscreen('${episode.id}-iframe')">Fullscreen</button>
                     <button class="control-btn" onclick="showNextEpisode('${episode.id}', 'next')">Next</button>
                 </div>
             `);
@@ -91,6 +131,8 @@
         }
     </script>
 </body>
+</html>
+
 <style>
     iframe{
       margin: auto;
