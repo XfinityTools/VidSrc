@@ -40,14 +40,7 @@
                 currentEpisode: 0,
                 sources: generateEpisodeSources('tt2258904', [10, 12]) // 2 seasons with varying episode counts
             },
-            {
-                id: 'D2',
-                title: 'Another TV Show',
-                imdb: 'imdbIdForOtherShow',
-                currentEpisode: 0,
-                sources: generateEpisodeSources('imdbIdForOtherShow', [5, 8, 10]) // 3 seasons with varying episode counts
-            },
-            // Add more episodes here
+      
         ];
 
         function showNextEpisode(episodeId, direction) {
@@ -112,7 +105,7 @@
                     <h1>${episode.title}</h1>
                     <iframe id="${episode.id}-iframe" width="100%" height="400" frameborder="5" allowfullscreen></iframe>
                     <button class="control-btn" onclick="showNextEpisode('${episode.id}', 'previous')">Previous</button>
-                    <button class="control-btn" onclick="toggleFullscreen('${episode.id}-iframe')">Fullscreen</button>
+                    
                     <button class="control-btn" onclick="showNextEpisode('${episode.id}', 'next')">Next</button>
                 </div>
             `);
@@ -131,58 +124,56 @@
         }
     </script>
 </body>
-</html>
-
 <style>
-    iframe{
-      margin: auto;
-    }
+  iframe{
+    margin: auto;
+  }
 
-    a{
-      text-decoration: none;
-      color: black;
-    }
+  a{
+    text-decoration: none;
+    color: black;
+  }
 
 
-    table{
-      padding-inline: 20px;
-      padding: 20px;
-    }
+  table{
+    padding-inline: 20px;
+    padding: 20px;
+  }
 
-    th,td{
-      padding: 15px;
-    }
+  th,td{
+    padding: 15px;
+  }
 
 @media only screen and (min-width: 1500px) {
 
-  .watch{
-      margin: auto;
-       width: 55%;
-    border-color: black;
-  }
+.watch{
+    margin: auto;
+     width: 55%;
+  border-color: black;
+}
 
-  h1{
-      margin: auto;
-  }
+h1{
+    margin: auto;
+}
 
-  body {
-        background-color: #f0f0f2;
+body {
+      background-color: #f0f0f2;
 
-  }
-  
+}
+
 }
 
 button{
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #000000; /* Red background color */
-    color: #fff; /* White text color */
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth transition on hover */
-    cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000; /* Red background color */
+  color: #fff; /* White text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+  cursor: pointer;
 }
 
- </style>
+</style>
 </html>
