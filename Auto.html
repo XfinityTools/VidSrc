@@ -60,9 +60,17 @@
             {
                 id: 'D1',
                 title: 'A Place to Call Home (2014)',
+                imdb: 'tt0159206',
+                currentEpisode: 0,
+                sources: generateEpisodeSources('tt0159206', [10, 12, 10,10,10]) // 2 seasons with varying episode counts
+            },
+
+            {
+                id: 'D2',
+                title: 'A Place to Call Home (2014)',
                 imdb: 'tt2258904',
                 currentEpisode: 0,
-                sources: generateEpisodeSources('tt2258904', [10, 12]) // 2 seasons with varying episode counts
+                sources: generateEpisodeSources('tt2258904', [12, 18, 18,18,8,20]) // 2 seasons with varying episode counts
             },
       
         ];
@@ -122,7 +130,7 @@
     <!-- Loop through each episode and create a button and div for it -->
     <script>
         episodes.forEach(episode => {
-            document.write(`
+            document.write(`<br><br>
                 <i class="fas fa-play"></i>
                 <button class="control-btn" onclick="toggleElement('${episode.id}')">${episode.title}</button>
                 <div id="${episode.id}" class="watch" style="display: none;">
