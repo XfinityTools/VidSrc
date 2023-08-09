@@ -327,6 +327,28 @@ document.addEventListener('click', function(event) {
       }
     }
   });
-  
+
   </script>
+  <script>
+    // Disable navigation events on the page
+    window.addEventListener('beforeunload', function(event) {
+      // Cancel the event to prevent navigation
+      event.preventDefault();
+      
+      // Prompt the user with a confirmation message
+      event.returnValue = 'Are you sure you want to leave?';
+    });
+    
+    // Disable click events on all links
+    document.addEventListener('click', function(event) {
+      const target = event.target;
+      
+      if (target.tagName === 'A') {
+        event.preventDefault();
+        console.log('Link click prevented:', target.href);
+        // You can add a message or other behavior here
+      }
+    });
+    </script>
+    
 </html>
