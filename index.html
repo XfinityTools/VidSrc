@@ -59,22 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
   
-    const autonextButton = document.getElementById('autonextButton');
-    let currentIndex = 0; // Keeps track of the current index of the content
-
-    // Array of watch div IDs
-    const watchDivIds = ['D1', 'D11', 'D2', 'D3', 'D19', 'D20', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10', 'D12', 'D13', 'D14', 'D15', 'D16', 'D17', 'D18', 'D21', 'D22'];
-
-    // Function to show the next content and hide the previous one
-    function showNextContent() {
-        document.getElementById(watchDivIds[currentIndex]).style.display = 'none'; // Hide the current content
-        currentIndex = (currentIndex + 1) % watchDivIds.length; // Move to the next index in a circular manner
-        document.getElementById(watchDivIds[currentIndex]).style.display = 'block'; // Show the next content
-    }
-
-    // Attach a click event listener to the autonext button
-    autonextButton.addEventListener('click', showNextContent);
-
 
   
   </script>
@@ -91,14 +75,14 @@ document.addEventListener("DOMContentLoaded", function() {
 <button class="control-btn" onclick="toggleElement('D1')">A Place to Call Home (2014)</button>
     <div id="D1" class="watch" style="display: none;">
        <h1>A Place to Call Home</h1> 
-            <iframe src="https://vidsrc.to/embed/tv/tt2258904" width="100%" height="400" frameborder="5" allowfullscreen></iframe>                   
+            <iframe src="https://vidsrc.to/embed/tv/tt2258904" width="100%" height="500" frameborder="5" allowfullscreen></iframe>                   
       </div>
 
   <br><br><br><i class="fas fa-play"></i>
     <button class="control-btn" onclick="toggleElement('D11')">Sex and the City (1998) </button>
     <div style="display: none;" id="D11" class="watch" style="margin: auto;">
             <h1>Sex and the City</h1>
-            <iframe src="https://vidsrc.to/embed/tv/tt0159206" width="100%" height="400" frameborder="5" allowfullscreen></iframe>           
+            <iframe src="https://vidsrc.to/embed/tv/tt0159206" width="100%" height="500" frameborder="5" allowfullscreen></iframe>           
     </div>
 
         <br><br><br><i class="fas fa-play"></i>
