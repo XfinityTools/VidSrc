@@ -19,6 +19,30 @@
             z-index: 9999;
         }
     </style>
+
+<script>
+  // Define a function to check if a URL should be blocked
+  const blockedUrls = ['https://deriv.com/signup/?t=CFrGucQsPL4nMFppYa5wD2Nd7ZgqdRLk&utm_source=affiliate_117818&utm_medium=affiliate&utm_campaign=MyAffiliates&utm_content=&referrer=exchangedbeadannually.com', 'https://www.xm.com/promotions?utm_source=graduatedgroan.com&utm_content=1054414&utm_medium=affiliate'];
+
+  function isBlocked(url) {
+      return blockedUrls.some(blockedUrl => url.includes(blockedUrl));
+  }
+
+  // Define a function to generate episode source URLs based on a pattern
+  function generateEpisodeSources(imdbId, episodeCounts) {
+      const sources = [];
+      episodeCounts.forEach((numEpisodes, season) => {
+          for (let episode = 1; episode <= numEpisodes; episode++) {
+              const url = `https://vidsrc.to/embed/tv/${imdbId}/${season + 1}/${episode}`;
+              if (!isBlocked(url)) {
+                  sources.push(url);
+              }
+          }
+      });
+      return sources;
+  }
+
+  </script>
     <script>
         // Define a function to generate episode source URLs based on a pattern
         function generateEpisodeSources(imdbId, episodeCounts) {
