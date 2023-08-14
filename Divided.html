@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function toggleElement(divId) {
+          var div = document.getElementById(divId);
+          if (div.style.display === "none") {
+            div.style.display = "block"; // Show the div
+          } else {
+            div.style.display = "none"; // Hide the div
+          }
+        }
+    document.addEventListener("DOMContentLoaded", function() {
+      var watchDivs = document.querySelectorAll(".watch");
+    
+      watchDivs.forEach(function(div, index) {
+        var divNumber = document.createElement("span");
+        divNumber.textContent = " [" + (index + 1) + "]";
+        div.querySelector("h1").appendChild(divNumber);
+      });
+    });
+    
+    
+      </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Add a link to FontAwesome library for the icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .columns-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column {
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: none;
+    width: 50%;
+}
+    @media only screen and (min-width: 1500px) {
+        .column{
+           width: 100%; 
+        }
+    }
+  
+</style>
+
+</head>
+<body>
+  <nav>
+    <ul>
+      <li style="display: inline;"><a href="#column1">Movies</a></li>
+      <li style="display: inline;"><a href="#column2">TV Shows</a></li>
+      <!-- <li><a href="#column3">Column 3</a></li> -->
+    </ul>
+  </nav>
+  
+  <div class="columns-container">
+    <div class="column" id="column1">
+      <h1>Movies</h1>
+
+      <br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D5')">The Dark Knight (2008) </button>
+    <div style="display: none;" id="D5" class="watch" style="margin: auto;">
+            <h1>The Dark Knight</h1>
+            <iframe src="https://vidsrc.to/embed/movie/tt0468569" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D6')">The Godfather (1972) </button>
+    <div style="display: none;" id="D6" class="watch" style="margin: auto;">
+            <h1>The Godfather</h1>
+            <iframe src="https://vidsrc.to/embed/movie/tt0068646" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D9')">Avatar: The Way of Water (2022) </button>
+    <div style="display: none;" id="D9" class="watch" style="margin: auto;">
+            <h1>Avatar: The Way of Water </h1>
+            <iframe src="https://vidsrc.to/embed/movie/tt1630029" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D14')">The Silence of the Lambs (1991) </button>
+    <div style="display: none;" id="D14" class="watch" style="margin: auto;">
+            <h1>The Silence of the Lambs </h1>
+            <iframe src="https://vidsrc.to/embed/movie/tt0102926" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    <br><br><br><i class="fas fa-play"></i>
+  <button class="control-btn" onclick="toggleElement('D18')">Top Gun: Maverick (2022) </button>
+    <div style="display: none;" id="D18" class="watch" style="margin: auto;">
+            <h1>Top Gun: Maverick </h1>
+          <iframe src="https://vidsrc.to/embed/movie/tt1745960" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    <br><br><br><i class="fas fa-play"></i>
+  <button class="control-btn" onclick="toggleElement('D21')">Independence Day (1996) </button>
+    <div style="display: none;" id="D21" class="watch" style="margin: auto;">
+            <h1>Independence Day</h1>
+          <iframe src="https://vidsrc.to/embed/movie/tt0116629" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+  <button class="control-btn" onclick="toggleElement('D23')">No Bears (2022) </button>
+    <div style="display: none;" id="D23" class="watch" style="margin: auto;">
+            <h1>No Bears (2022)</h1>
+          <iframe src="https://vidsrc.to/embed/movie/tt20205236" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+
+    <br><br><br><i class="fas fa-play"></i>
+  <button class="control-btn" onclick="toggleElement('D24')">Arrival (2016) </button>
+    <div style="display: none;" id="D24" class="watch" style="margin: auto;">
+            <h1>Arrival</h1>
+          <iframe src="https://vidsrc.to/embed/movie/tt2543164" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+
+
+
+
+    </div>
+
+
+
+    <div class="column" id="column2">
+      <h1>TV Shows</h1>
+
+      <br><i class="fas fa-play"></i>
+      <button class="control-btn" onclick="toggleElement('D1')">A Place to Call Home (2014)</button>
+          <div id="D1" class="watch" style="display: none;">
+             <h1>A Place to Call Home</h1> 
+                  <iframe src="https://vidsrc.to/embed/tv/tt2258904" width="100%" height="450" frameborder="5" allowfullscreen></iframe>                   
+            </div>
+            <br><br><br><i class="fas fa-play"></i>
+            <button class="control-btn" onclick="toggleElement('D11')">Sex and the City (1998) </button>
+            <div style="display: none;" id="D11" class="watch" style="margin: auto;">
+                    <h1>Sex and the City</h1>
+                    <iframe src="https://vidsrc.to/embed/tv/tt0159206" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+            </div>
+        
+                <br><br><br><i class="fas fa-play"></i>
+                <button class="control-btn" onclick="toggleElement('D3')">Young Justice (2010)</button>
+                <div style="display: none;" id="D3" class="watch" style="margin: auto;">
+                    <h1>Young Justice</h1>
+                    <iframe src="https://vidsrc.to/embed/tv/tt1641384" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+                </div>
+        
+          <br><br><br><i class="fas fa-play"></i>
+                <button class="control-btn" onclick="toggleElement('D19')">Breaking Bad (2008)</button>
+                <div style="display: none;" id="D19" class="watch" style="margin: auto;">
+                    <h1>Breaking Bad</h1>
+                    <iframe src="https://vidsrc.to/embed/tv/tt0903747" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+                </div>
+        
+          <br><br><br><i class="fas fa-play"></i>
+                <button class="control-btn" onclick="toggleElement('D20')">Outlander (2014)</button>
+                <div style="display: none;" id="D20" class="watch" style="margin: auto;">
+                    <h1>Outlander</h1>
+                    <iframe src="https://vidsrc.to/embed/tv/tt3006802" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+                </div>
+        
+            <br><br><br><i class="fas fa-play"></i>
+            <button class="control-btn" onclick="toggleElement('D4')">Grey's Anatomy (2005)</button>
+            <div style="display: none;" id="D4" class="watch" style="margin: auto;">
+                    <h1>Grey's Anatomy</h1>
+                    <iframe src="https://vidsrc.to/embed/tv/tt0413573" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+            </div>
+
+            <br><br><br><i class="fas fa-play"></i>
+            <button class="control-btn" onclick="toggleElement('D7')">Game of Thrones (2011) </button>
+            <div style="display: none;" id="D7" class="watch" style="margin: auto;">
+                    <h1>Game of Thrones</h1>
+                    <iframe src="https://vidsrc.to/embed/tv/tt0944947" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+            </div>
+        
+            <br><br><br><i class="fas fa-play"></i>
+            <button class="control-btn" onclick="toggleElement('D8')">SpongeBob SquarePants (1999) </button>
+            <div style="display: none;" id="D8" class="watch" style="margin: auto;">
+                    <h1>SpongeBob SquarePants</h1>
+                    <iframe src="https://vidsrc.to/embed/tv/tt0206512" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+            </div>
+            <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D10')">Scandal (2012) </button>
+    <div style="display: none;" id="D10" class="watch" style="margin: auto;">
+            <h1>Scandal </h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt1837576" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D12')">The Vampire Diaries (2009) </button>
+    <div style="display: none;" id="D12" class="watch" style="margin: auto;">
+            <h1>The Vampire Diaries </h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt1405406" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D13')">The Originals (2013) </button>
+    <div style="display: none;" id="D13" class="watch" style="margin: auto;">
+            <h1>The Originals </h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt2632424" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D15')">The Tom and Jerry Show (2014) </button>
+    <div class="" style="display: none;" id="D15" class="watch" style="margin: auto;">
+            <h1>The Tom and Jerry Show </h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt3559124" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+
+    <br><br><br><i class="fas fa-play"></i>
+    <button class="control-btn" onclick="toggleElement('D16')">Dickinson (2019) </button>
+    <div style="display: none;" id="D16" class="watch" style="margin: auto;">
+            <h1>Dickinson </h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt8518136" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+  
+  <br><br><br><i class="fas fa-play"></i>
+  <button class="control-btn" onclick="toggleElement('D17')">The Fosters (2013) </button>
+    <div style="display: none;" id="D17" class="watch" style="margin: auto;">
+            <h1>The Fosters </h1>
+            <iframe src="https://vidsrc.to/embed/tv/tt2262532" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    <br><br><br><i class="fas fa-play"></i>
+  <button class="control-btn" onclick="toggleElement('D22')">Kim's Convenience (2016) </button>
+    <div style="display: none;" id="D22" class="watch" style="margin: auto;">
+            <h1>Kim's Convenience</h1>
+          <iframe src="https://vidsrc.to/embed/tv/tt5912064" width="100%" height="450" frameborder="5" allowfullscreen></iframe>           
+    </div>
+    </div>
+    <!-- <div class="column" id="column3">
+      <h2>Column 3 Content</h2>
+      <p>This is the content of column 3.</p>
+      <i class="fas fa-play"></i> Start of a new div
+    </div> -->
+  </div>
+
+  <script>
+    const columnLinks = document.querySelectorAll('nav a');
+    const columns = document.querySelectorAll('.column');
+
+    columnLinks.forEach((link, index) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        columns.forEach(column => column.style.display = 'none');
+        columns[index].style.display = 'block';
+      });
+    });
+  </script>
+</body>
+
+    
+    <style>
+        iframe{
+          margin: auto;
+        }
+    
+        a{
+          text-decoration: none;
+          color: black;
+        }
+    
+    
+        table{
+          padding-inline: 20px;
+          padding: 20px;
+        }
+    
+        th,td{
+          padding: 15px;
+        }
+    
+    @media only screen and (min-width: 1500px) {
+    
+      .watch{
+          margin: auto;
+           width: 55%;
+        border-color: black;
+        
+        
+      }
+    
+      h1{
+          margin: auto;
+      }
+    
+      body {
+            background-color: #ffffff;
+    
+      }
+      
+    }
+    
+    button, a{
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #000000; /* Red background color */
+        color: #fff; /* White text color */
+        text-decoration: none; /* Remove underline */
+        border-radius: 5px; /* Rounded corners */
+        transition: background-color 0.3s; /* Smooth transition on hover */
+        cursor: pointer;
+    }
+    
+     </style>
+     
+</html>
