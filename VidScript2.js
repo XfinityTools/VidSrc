@@ -1,17 +1,4 @@
-document.addEventListener('click', function(event) {
-    const target = event.target;
-    
-    if (target.tagName === 'A') {
-      const href = target.getAttribute('href');
-      
-      // Check if the link is external (starts with http:// or https://)
-      if (href && /^https?:\/\//i.test(href)) {
-        event.preventDefault();
-        console.log('External link blocked:', href);
-        // You can add a message or other behavior here
-      }
-    }
-  });
+
 
 
   // List of blocked URLs (patterns)
@@ -24,19 +11,6 @@ const blockedUrls = [
 function isBlocked(url) {
   return blockedUrls.some(blockedUrl => url.startsWith(blockedUrl));
 }
-
-// Intercept link clicks
-document.addEventListener('click', event => {
-  const target = event.target;
-  if (target.tagName === 'A' && target.href) {
-    const href = new URL(target.href);
-    if (isBlocked(href.pathname)) {
-      event.preventDefault();
-      // Optionally, you can display a message to the user indicating access is blocked
-      // For example: target.textContent = 'Access blocked';
-    }
-  }
-});
 
 
   
