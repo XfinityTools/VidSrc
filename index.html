@@ -303,45 +303,7 @@ button, a{
 }
 
  </style>
-  <script>
-    // Disable navigation events on the page
-    window.addEventListener('beforeunload', function(event) {
-      // Cancel the event to prevent navigation
-      event.preventDefault();
-      
-      // Prompt the user with a confirmation message
-      event.returnValue = 'Are you sure you want to leave?';
-    });
-    
-    // Disable click events on all links
-    document.addEventListener('click', function(event) {
-      const target = event.target;
-      
-      if (target.tagName === 'A') {
-        event.preventDefault();
-        console.log('Link click prevented:', target.href);
-        // You can add a message or other behavior here
-      }
-    });
-
-
-    document.addEventListener('click', function(event) {
-    const target = event.target;
-    
-    if (target.tagName === 'A') {
-      const href = target.getAttribute('href');
-      
-      // Check if the link is external (starts with http:// or https://)
-      if (href && /^https?:\/\//i.test(href)) {
-        event.preventDefault();
-        console.log('External link blocked:', href);
-        // You can add a message or other behavior here
-      }
-    }
-  });
-    </script>
-
-    
+   
 <script>
   // List of blocked URLs (patterns)
 const blockedUrls = [
@@ -355,18 +317,6 @@ function isBlocked(url) {
   return blockedUrls.some(blockedUrl => url.startsWith(blockedUrl));
 }
 
-// Intercept link clicks
-document.addEventListener('click', event => {
-  const target = event.target;
-  if (target.tagName === 'A' && target.href) {
-    const href = new URL(target.href);
-    if (isBlocked(href.pathname)) {
-      event.preventDefault();
-      // Optionally, you can display a message to the user indicating access is blocked
-      // For example: target.textContent = 'Access blocked';
-    }
-  }
-});
 
 </script>
   
